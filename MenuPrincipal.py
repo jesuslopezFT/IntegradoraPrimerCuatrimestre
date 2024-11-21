@@ -1,5 +1,6 @@
 import ControlarInventario as ctrl
 import AgregarProducto as agg
+import AgregarOReducir as masmenos
 
 import tkinter as tk
 
@@ -19,5 +20,7 @@ Titulo.grid(row= 1, column= 25)
 agg.IniciarMenu(menuPrincipal)
 
 ctrl.IniciarMenu(menuPrincipal)
+
+masmenos.IniciarMenu(menuPrincipal)
 
 menuPrincipal.mainloop()
