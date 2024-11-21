@@ -6,6 +6,8 @@ import tkinter as tk
 
 # Valores
 
+# hjgkjghgcjhc,j
+
 # Funciones
 
 # Tkinter
