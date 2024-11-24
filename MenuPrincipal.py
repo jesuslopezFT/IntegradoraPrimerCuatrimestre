@@ -1,16 +1,11 @@
 import ControlarInventario as ctrl
 import AgregarProducto as agg
-import AgregarOReducir as masmenos
+import Vender as vender
+import AgregarCantidad as cant
+import EliminarProducto as elim
 
 import tkinter as tk
 
-# Valores
-
-# hjgkjghgcjhc,j
-
-# Funciones
-
-# Tkinter
 menuPrincipal = tk.Tk()
 menuPrincipal.title("Control de Inventario")
 
@@ -23,6 +18,10 @@ agg.IniciarMenu(menuPrincipal)
 
 ctrl.IniciarMenu(menuPrincipal)
 
-masmenos.IniciarMenu(menuPrincipal)
+vender.IniciarMenu(menuPrincipal)
+
+cant.IniciarMenu(menuPrincipal)
+
+elim.IniciarMenu(menuPrincipal)
 
 menuPrincipal.mainloop()
