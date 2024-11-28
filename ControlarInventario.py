@@ -45,7 +45,8 @@ def ActualizarProducto(menuPrincipal,
     else:  
         boton = tk.Button(menuPrincipal, width= 25, height= 2)
 
-        boton = tk.Button(menuPrincipal, text= f"\"{inventario[indice].nombre}\": \n{inventario[indice].unidades} Unidades; {inventario[indice].ventas} Ventas", 
+        boton = tk.Button(menuPrincipal, text= f"\"{inventario[indice].nombre}\": \n" +
+                f"{inventario[indice].unidades} Unidades; {inventario[indice].ventas} Ventas", 
             width= 25, height= 2,
             command= partial(SeleccionarProducto, menuPrincipal, indice, fila, columna) )
         boton.grid(row= fila, column= columna)
