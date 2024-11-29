@@ -37,6 +37,9 @@ def Enlistar(menuPrincipal : tk.Tk ,valor : int = 0, usarEntrada : bool = False)
     producto = ctrl.inventario[ctrl.productoSeleccionado["Indice"]]
 
     try:
+        if (producto.unidades <= 0):
+            messagebox.showwarning("Aviso", "El producto no tiene existencias, por favor, agregue mas unidades al producto")
+            return
         if (valor + listaCompras[producto.nombre][1]) > producto.unidades:
             messagebox.showwarning("Aviso", "Se intento enlistar una cantidad mayor de la que hay disponible. Se tomo el valor de las unidades, en caso de querer agregar mas, por favor, agregue mas unidades en existencia al producto.")
             listaCompras[producto.nombre][1] = producto.unidades
@@ -81,18 +84,24 @@ def Vender(menuPrincipal):
         messagebox.showwarning("Aviso", "La lista de compras esta vacia")
         return
     
+    texto = "\n"
+    """
+    Este texto sera para poder borrar el texto de la lista
+    """
     for nombres, unidades in listaCompras.values():
+        texto += "\n"
         for j in range(len(ctrl.inventario)):
             if (nombres == ctrl.inventario[j].nombre):
                 ctrl.inventario[j].unidades -= unidades
                 ctrl.inventario[j].ventas += unidades
     
                 
-    listaTitulo.config(text= " \n \n \n")
+    listaTitulo.config(text= texto)
     listaCompras.clear()
     ActualizarLista(menuPrincipal)
 
     ctrl.ActualizarInventario(menuPrincipal)
+    ctrl.SeleccionarProducto(menuPrincipal, ctrl.productoSeleccionado["Indice"], ctrl.productoSeleccionado["Fila"], ctrl.productoSeleccionado["Columna"])
 
 # Cosas de tkinter
 def IniciarMenu(menuPrincipal):
