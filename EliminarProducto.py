@@ -18,4 +18,4 @@ def IniciarMenu(menuPrincipal):
         text= "Eliminar Producto",
         width= 15, height= 1,
         command= partial(EliminarProducto, menuPrincipal))
-    eliminar.grid(row= 10, column= 175)
+    eliminar.grid(row= 14, column= 175)

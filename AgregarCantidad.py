@@ -23,6 +23,7 @@ def AgregarCantidad(menuPrincipal):
                        productoSeleccionado["Indice"],
                        2 + (productoSeleccionado["Indice"] // 5),
                        25 + ( (25 * productoSeleccionado["Indice"]) - ((productoSeleccionado["Indice"] // 5) * 125 )))
+    AgregarEtiquetaCantidad(menuPrincipal, inventario[productoSeleccionado["Indice"]].unidades, inventario[productoSeleccionado["Indice"]].ventas)
 
 def IniciarMenu(menuPrincipal):
     global entradaCantidad

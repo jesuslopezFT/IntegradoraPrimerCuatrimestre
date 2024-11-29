@@ -1,7 +1,7 @@
 import ControlarInventario as ctrl
 
 import tkinter as tk
-from tkinter import messagebox, ttk
+from tkinter import messagebox
 from functools import partial
 
 # Funciones generales
@@ -28,7 +28,7 @@ def Vender(menuPrincipal, valor, usarEntrada = False):
             messagebox.showerror("Error", "Valor introducido invalido")
             return
 
-    ctrl.AgregarEtiquetaCantidad(menuPrincipal, f"Unidades / Ventas: \n{ctrl.inventario[ctrl.productoSeleccionado["Indice"]].unidades} / {ctrl.inventario[ctrl.productoSeleccionado["Indice"]].ventas}")
+    ctrl.AgregarEtiquetaCantidad(menuPrincipal, ctrl.inventario[ctrl.productoSeleccionado["Indice"]].unidades, ctrl.inventario[ctrl.productoSeleccionado["Indice"]].ventas)
     
     indice = ctrl.productoSeleccionado["Indice"]
     fila = 2 + (indice // 5)
@@ -65,4 +65,3 @@ def IniciarMenu(menuPrincipal):
         width= 15, height= 1,
         command= partial(Vender, menuPrincipal, 0, True))
     BotonVenderX.grid(row= 6, column= 175)
-    

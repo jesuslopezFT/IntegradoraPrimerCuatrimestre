@@ -3,6 +3,7 @@ import AgregarProducto as agg
 import Vender as vender
 import AgregarCantidad as cant
 import EliminarProducto as elim
+import ListaDeCompras as lista
 
 import tkinter as tk
 
@@ -23,5 +24,7 @@ vender.IniciarMenu(menuPrincipal)
 cant.IniciarMenu(menuPrincipal)
 
 elim.IniciarMenu(menuPrincipal)
+
+lista.IniciarMenu(menuPrincipal)
 
 menuPrincipal.mainloop()
