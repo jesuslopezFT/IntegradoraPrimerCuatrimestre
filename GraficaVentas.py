@@ -1,1 +1,1 @@
-print("No implementado")
+import tkinter as tk
