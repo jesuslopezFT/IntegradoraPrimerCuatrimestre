@@ -18,12 +18,6 @@ Lista de productos, estos tienen propiedades: nombre, unidades y ventas.
 # 2024 Nov 20: Este es para pruebas 
 inventario = [ Producto("Papitas", 2, 0), Producto("Sodas", 2, 1), Producto("Dulces", 1, 10), Producto("Chocolates", 4, 0), Producto("Aguas", 10, 25), Producto("Cacahuates", 1, 5) ]
 
-# Diccionario de nombre y venta del producto para hacer la grafica
-nombres_productos = [producto.nombre for producto in inventario]
-
-# Crear la biblioteca de número de ventas (solo nombres como claves y ventas como valores)
-ventas_productos = [producto.ventas for producto in inventario]
-
 #inventario = []
 seHaSeleccionadoAlgo = False
 productoSeleccionado = {"Indice": -1, "Fila": 2, "Columna": 25}
@@ -101,6 +95,10 @@ def ChecarSiSeHaSeleccionadoProducto():
         messagebox.showwarning("Aviso", "No se ha seleccionado un producto")
         return False
     else: return True
+
+# Diccionario de nombre y venta del producto para hacer la grafica
+nombres_productos = [producto.nombre for producto in inventario]
+ventas_productos = [producto.ventas for producto in inventario]
 
 
 # Funciones especializadas 

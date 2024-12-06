@@ -4,6 +4,7 @@ import Vender as vender
 import AgregarCantidad as cant
 import EliminarProducto as elim
 import ListaDeCompras as lista
+import GraficaVentas as graf
 
 import tkinter as tk
 
@@ -27,8 +28,6 @@ elim.IniciarMenu(menuPrincipal)
 
 lista.IniciarMenu(menuPrincipal)
 
-
-botonGrafica = tk.Button(menuPrincipal, text= "Boton")
-botonGrafica.grid(row= 14, column= 1)
+graf.IniciarMenu(menuPrincipal)
 
 menuPrincipal.mainloop()

@@ -1,19 +1,22 @@
-import ControlarInventario as inventario
+import ControlarInventario as inv
+import Vender as vender
 import tkinter as tk
 from tkinter import messagebox  
 from functools import partial
 import matplotlib.pyplot as plt
 
-# Crear la gráfica de ventas
-plt.figure(figsize=(10, 6))  # Tamaño de la figura (opcional)
+# Función para mostrar la gráfica
+def mostrar_grafica():
+    plt.figure(figsize=(10, 6))
 
-# Crear gráfico de barras
-plt.bar(inventario.nombres_productos, inventario.ventas_productos, color='skyblue')
+    plt.bar(inv.nombres_productos, inv.ventas_productos, color='skyblue')
 
-# Añadir título y etiquetas
-plt.title('Ventas de Productos', fontsize=14)
-plt.xlabel('Producto', fontsize=12)
-plt.ylabel('Número de Ventas', fontsize=12)
+    plt.title('Ventas de Productos', fontsize=14)
+    plt.xlabel('Producto', fontsize=12)
+    plt.ylabel('Número de Ventas', fontsize=12)
 
-# Mostrar la gráfica
-plt.show()
+    plt.show()
+
+def IniciarMenu(menuPrincipal):
+    boton_grafica = tk.Button(menuPrincipal, text="Mostrar Gráfica de Ventas", command=mostrar_grafica)
+    boton_grafica.grid(row=14, column=1)
