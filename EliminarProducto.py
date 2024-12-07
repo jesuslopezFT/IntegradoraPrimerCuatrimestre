@@ -9,6 +9,10 @@ def EliminarProducto(menuPrincipal):
         return
     
     ctrl.inventario.pop(ctrl.productoSeleccionado["Indice"])
+    ctrl.nombres_productos.pop(ctrl.productoSeleccionado["Indice"])
+    valorVenta = (int(ctrl.productoSeleccionado["Indice"]))
+    ctrl.ventas_productos.pop(valorVenta)
+
     ctrl.productoSeleccionado["Indice"] = -1
     ctrl.IniciarMenu(menuPrincipal)
     ctrl.ActualizarInventario(menuPrincipal)

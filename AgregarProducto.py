@@ -28,6 +28,8 @@ def AgregarProducto(menuPrincipal,
 
 
     inventario.append(Producto(Nombre.get(), valor, 0))
+    nombres_productos.append(Nombre.get())
+    ventas_productos.append(0)
 
     ActualizarInventario(menuPrincipal)
 

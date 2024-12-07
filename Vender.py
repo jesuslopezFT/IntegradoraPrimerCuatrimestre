@@ -16,6 +16,7 @@ def Vender(menuPrincipal, valor, usarEntrada = False):
     if (not usarEntrada):
         ctrl.inventario[ctrl.productoSeleccionado["Indice"]].unidades -= valor
         ctrl.inventario[ctrl.productoSeleccionado["Indice"]].ventas += valor
+        ctrl.ventas_productos[ctrl.productoSeleccionado["Indice"]] += valor
     else:
         if (not EntradaVenderX.get() or EntradaVenderX.get() == ""):
             messagebox.showwarning("Aviso", "Cantidad para vender vacia")
@@ -24,6 +25,7 @@ def Vender(menuPrincipal, valor, usarEntrada = False):
             nuevoValor = int(EntradaVenderX.get())
             ctrl.inventario[ctrl.productoSeleccionado["Indice"]].unidades -= nuevoValor
             ctrl.inventario[ctrl.productoSeleccionado["Indice"]].ventas += nuevoValor
+            ctrl.ventas_productos[ctrl.productoSeleccionado["Indice"]] += nuevoValor
         except:
             messagebox.showerror("Error", "Valor introducido invalido")
             return
