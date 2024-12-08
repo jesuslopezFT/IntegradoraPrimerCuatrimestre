@@ -96,6 +96,10 @@ def ChecarSiSeHaSeleccionadoProducto():
         return False
     else: return True
 
+# Diccionario de nombre y venta del producto para hacer la grafica
+nombres_productos = [producto.nombre for producto in inventario]
+ventas_productos = [producto.ventas for producto in inventario]
+
 
 # Funciones especializadas 
 def IniciarMenu(menuPrincipal):
